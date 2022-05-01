@@ -1,6 +1,10 @@
+// constants
 const container = document.querySelector(".container");
 const buttonSize = document.getElementById("grid-size");
+const rainbowButton = document.getElementById("rainbow");
+const clearButton = document.getElementById("clear");
 
+// function that make the grid
 function makeGrid(size) {
     container.style.setProperty("--size", size)
     for (c = 0; c < (size * size); c++) {
@@ -14,8 +18,9 @@ function makeGrid(size) {
 
 window.onload = makeGrid(10)
 
+// eventListener for the button
 buttonSize.addEventListener("click", () =>  {
-    let size = prompt("Insert a value between 1 or 64");
+    let size = prompt("Insert a value between 1 & 64");
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -23,9 +28,7 @@ buttonSize.addEventListener("click", () =>  {
         makeGrid(size);
     }
     else {
-        alert("Insert a valid value")
+        alert("Insert a valid value (between 1 & 64)")
         makeGrid(10)
     }
 });
-
-
