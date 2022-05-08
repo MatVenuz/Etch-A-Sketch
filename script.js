@@ -20,7 +20,7 @@ window.onload = makeGrid(10)
 
 // eventListener for the button
 buttonSize.addEventListener("click", () =>  {
-    let size = prompt("Insert a value between 1 & 64");
+    let size = parseInt(prompt("Insert a value between 1 & 64"));
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
